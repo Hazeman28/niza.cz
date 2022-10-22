@@ -1,0 +1,21 @@
+@import "/css/base.css" layer(base);
+@import "/css/components.css" layer(components);
+
+@layer main {
+  main {
+    display: grid;
+    gap: 4rem;
+    place-content: center;
+    padding-inline: 1rem;
+    padding-top: 7rem;
+  }
+
+  .profile-photo {
+    --size: 10rem;
+
+    width: var(--size);
+    height: var(--size);
+    object-fit: cover;
+    border-radius: var(--br-full);
+  }
+}
