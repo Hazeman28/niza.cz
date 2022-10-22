@@ -2,14 +2,6 @@
 @import "/css/components.css" layer(components);
 
 @layer main {
-  main {
-    display: grid;
-    gap: 4rem;
-    place-content: center;
-    padding-inline: 1rem;
-    padding-top: 3rem;
-  }
-
   .profile-photo {
     --size: 10rem;
 
@@ -19,9 +11,4 @@
     border-radius: var(--br-full);
   }
   
-  @media screen and (min-width: 48rem) {
-    main {
-      padding-top: 7rem;
-    }
-  }
 }
