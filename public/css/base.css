@@ -56,37 +56,37 @@ a {
 }
 
 h1 {
-  font-size: 4rem;
+  font-size: 3rem;
   font-weight: 900;
   max-width: 15ch;
 }
 
 h2 {
-  font-size: 3rem;
+  font-size: 2.5rem;
   font-weight: 800;
   max-width: 25ch;
 }
 
 h3 {
-  font-size: 2.5rem;
+  font-size: 2rem;
   font-weight: 700;
   max-width: 35ch;
 }
 
 h4 {
-  font-size: 2rem;
+  font-size: 1.5rem;
   font-weight: 700;
   max-width: 40ch;
 }
 
 h5 {
-  font-size: 1.5rem;
+  font-size: 1.25rem;
   font-weight: 600;
   max-width: 45ch;
 }
 
 h6 {
-  font-size: 1.25rem;
+  font-size: 1.125rem;
   font-weight: 600;
   max-width: 50ch;
 }
@@ -111,5 +111,31 @@ footer {
 
     --bg-color: hsl(var(--theme-black));
     --fg-color: has(var(--theme-light));
+  }
+}
+
+@media screen and (min-width: 48rem) {
+  h1 {
+    font-size: 4rem;
+  }
+
+  h2 {
+    font-size: 3rem;
+  }
+
+  h3 {
+    font-size: 2.5rem;
+  }
+
+  h4 {
+    font-size: 2rem;
+  }
+
+  h5 {
+    font-size: 1.5rem;
+  }
+
+  h6 {
+    font-size: 1.25rem;
   }
 }
