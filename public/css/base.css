@@ -101,14 +101,8 @@ main {
   padding-top: 3rem;
 }
 
-footer {
-  display: grid;
-  place-content: center;
-  text-align: center;
+nz-footer {
   margin-top: auto;
-  padding: 1.5rem;
-  font-size: 0.875rem;
-  opacity: 0.75;
 }
 
 @media (prefers-color-scheme: dark) {

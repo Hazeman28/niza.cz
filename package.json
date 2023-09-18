@@ -1,0 +1,21 @@
+{
+  "name": "niza.cz",
+  "type": "module",
+  "version": "1.0.0",
+  "description": "[niza.cz](https://niza.cz) - is may personal website, where you can find some information about me, contacts and learn about my hobbies.",
+  "main": "public/src/main.js",
+  "scripts": {
+    "start": "http-server -p 8080"
+  },
+  "keywords": [
+    "niza",
+    "web development",
+    "personal page"
+  ],
+  "author": "Niza Toshpulatov <niza@hey.com>",
+  "license": "ISC",
+  "devDependencies": {
+    "http-server": "^14.1.1",
+    "typescript": "^5.2.2"
+  }
+}

@@ -1,84 +1,11 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content="Niza's personal page" />
-    <link rel="stylesheet" href="index.css" />
-    <title>Niza</title>
-    <script defer type="module">
-      const currentYearSpan = document.querySelector("#current-year");
-
-      if (currentYearSpan) {
-        currentYearSpan.textContent = new Date().getFullYear();
-      }
-    </script>
+    <script src="src/main.js" blocking="render" type="module" async></script>
   </head>
   <body>
-    <main>
-      <section class="info-section">
-        <header>
-          <img
-            class="profile-photo"
-            src="/assets/img/me.jpeg"
-            alt="Portrait photo of a young man wearing over-ear headphones, with a stripe of a packing tape over his eyes, sitting at a desk looking down at a laptop screen with a slight smile."
-          />
-          <h1>Hi, I'm Niza!</h1>
-          <p>
-            Welcome to my page. Currently I'm working as a web developer. I
-            enjoy creating things and in my free time I like to compose music.
-          </p>
-          <ul class="social-link-list">
-            <li>
-              <a
-                class="social-link"
-                href="https://github.com/nizamiza"
-                title="My GitHub profile"
-                target="_blank"
-                style="--icon-url: url('/assets/icons/github-original.svg')"
-              >
-              </a>
-            </li>
-            <li>
-              <a
-                class="social-link"
-                href="https://www.linkedin.com/in/niza-toshpulatov-27223b233/"
-                title="My LinkedIn profile"
-                target="_blank"
-                style="--icon-url: url('/assets/icons/linkedin-original.svg')"
-              >
-              </a>
-            </li>
-            <li>
-              <a
-                class="social-link"
-                href="https://open.spotify.com/artist/2M4Exu82R60obRFPGlfvFA?si=tFLBqqNrTdySOUW-dmZhXA"
-                title="My Spotify profile"
-                target="_blank"
-                style="--icon-url: url('/assets/icons/spotify-original.svg')"
-              >
-              </a>
-            </li>
-            <li>
-              <a
-                class="social-link"
-                href="https://www.youtube.com/channel/UCWcOtEVT1KVRPZ0j-pumVZA"
-                title="My YouTube profile"
-                target="_blank"
-                style="--icon-url: url('/assets/icons/youtube.svg')"
-              >
-              </a>
-            </li>
-          </ul>
-        </header>
-      </section>
-    </main>
-    <footer>
-      <p>
-        For additional inquiries contact me via email
-        <a href="mailto:niza@hey.com">niza@hey.com</a>.
-      </p>
-      <p>Niza Toshpulatov © <span id="current-year"></span></p>
-    </footer>
+    <nz-layout>
+      <nz-home />
+    </nz-layout>
   </body>
 </html>
