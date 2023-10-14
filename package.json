@@ -1,7 +1,7 @@
 {
   "name": "niza.cz",
   "type": "module",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "description": "[niza.cz](https://niza.cz) - is may personal website, where you can find some information about me, contacts and learn about my hobbies.",
   "main": "public/src/main.js",
   "scripts": {
