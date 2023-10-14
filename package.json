@@ -7,7 +7,7 @@
   "scripts": {
     "bump": "npm version -m \"Release v%s\"",
     "start": "http-server -p 8080",
-    "release": "git checkout release && git merge main && git push && git push --tags && git checkout main"
+    "release": "git checkout release && git merge main && git push --all && git push --tags && git checkout main"
   },
   "keywords": [
     "niza",
