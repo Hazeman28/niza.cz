@@ -16,6 +16,8 @@
   "license": "ISC",
   "devDependencies": {
     "http-server": "^14.1.1",
-    "typescript": "^5.2.2"
+    "niza": "^1.1.5",
+    "typescript": "^5.2.2",
+    "zod": "^3.22.4"
   }
 }

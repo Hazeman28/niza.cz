@@ -5,6 +5,13 @@
     "checkJs": true,
     "strict": true,
     "module": "ESNext",
-    "moduleResolution": "nodenext"
+    "moduleResolution": "nodenext",
+    "types": ["niza"],
+    "paths": {
+      "https://cdn.jsdelivr.net/gh/nizamiza/nz@main/*": [
+        "./node_modules/niza/*"
+      ],
+      "https://cdn.jsdelivr.net/npm/zod/+esm": ["./node_modules/zod/index.d.ts"]
+    }
   }
 }

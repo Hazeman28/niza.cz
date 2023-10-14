@@ -1,14 +1,5 @@
 <template>
   <style>
-    .profile-photo {
-      --size: 10rem;
-
-      width: var(--size);
-      height: var(--size);
-      object-fit: cover;
-      border-radius: var(--br-full);
-    }
-
     .info-section {
       display: grid;
       gap: 1.5rem;
@@ -38,7 +29,7 @@
   <main>
     <section class="info-section">
       <header>
-        <img class="profile-photo" src="/assets/img/me.jpeg" alt="" />
+        <nz-gravatar></nz-gravatar>
         <h1>Hi, I'm Niza!</h1>
         <p>
           Welcome to my page. Currently I'm working as a web developer. I enjoy
@@ -79,6 +70,14 @@
           </li>
         </ul>
       </header>
+    </section>
+    <section class="info-section">
+      <h2>Blog</h2>
+      <p>
+        I have a blog at <a href="https://world.hey.com/niza">HEY World</a>. I
+        tend to post all kinds of things related to my work and interests. Check
+        it out if you're interested.
+      </p>
     </section>
   </main>
 </template>
