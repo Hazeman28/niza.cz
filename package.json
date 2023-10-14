@@ -5,7 +5,9 @@
   "description": "[niza.cz](https://niza.cz) - is may personal website, where you can find some information about me, contacts and learn about my hobbies.",
   "main": "public/src/main.js",
   "scripts": {
-    "start": "http-server -p 8080"
+    "bump": "npm version -m \"Release v%s\"",
+    "start": "http-server -p 8080",
+    "release": "git checkout release && git merge main && git push && git push --tags && git checkout main"
   },
   "keywords": [
     "niza",
