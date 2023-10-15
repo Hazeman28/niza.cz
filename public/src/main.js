@@ -1,4 +1,4 @@
-import { bootstrap } from "https://cdn.jsdelivr.net/gh/nizamiza/nz@main/lib/core/bootstrap.js";
+import { bootstrap } from "https://cdn.jsdelivr.net/npm/nzjs/lib/core/bootstrap.js";
 import { definition as socialLink } from "./components/nz-social-link/nz-social-link.js";
 import { definition as footer } from "./components/nz-footer/nz-footer.js";
 import { definition as gravatar } from "./components/nz-gravatar/nz-gravatar.js";

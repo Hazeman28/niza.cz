@@ -6,12 +6,9 @@
     "strict": true,
     "module": "ESNext",
     "moduleResolution": "nodenext",
-    "types": ["niza"],
+    "types": ["nzjs"],
     "paths": {
-      "https://cdn.jsdelivr.net/gh/nizamiza/nz@main/*": [
-        "./node_modules/niza/*"
-      ],
-      "https://cdn.jsdelivr.net/npm/zod/+esm": ["./node_modules/zod/index.d.ts"]
+      "https://cdn.jsdelivr.net/npm/nzjs/*": ["./node_modules/nzjs/*"]
     }
   }
 }
