@@ -18,7 +18,7 @@
   "license": "ISC",
   "devDependencies": {
     "http-server": "^14.1.1",
-    "nzjs": "^1.1.8",
+    "nzjs": "^1.2.0",
     "typescript": "^5.2.2"
   }
 }
