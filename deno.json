@@ -1,0 +1,10 @@
+{
+  "tasks": {
+    "dev": "deno run --watch --allow-all main.ts"
+  },
+  "imports": {
+    "dotenv": "https://deno.land/std@0.208.0/dotenv/mod.ts",
+    "oak": "https://deno.land/x/oak@v12.6.1/mod.ts",
+    "zodenv": "https://deno.land/x/zodenv@v2.0.1/mod.ts"
+  }
+}
