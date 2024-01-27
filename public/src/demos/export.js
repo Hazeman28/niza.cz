@@ -1,1 +1,1 @@
-export { definition as textDecorationMenu } from "./nz-text-decoration-menu/nz-text-decoration-menu.js";
+export { definition as textDecorationMenu } from "./demo-text-decoration-menu/demo-text-decoration-menu.js";
