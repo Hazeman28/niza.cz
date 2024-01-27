@@ -1,0 +1,54 @@
+<template>
+  <nz-head>
+    <title>Demos</title>
+    <meta name="description" content="Simple demos" />
+  </nz-head>
+  <main>
+    <header class="page-header">
+      <h1>Demos</h1>
+      <p>Here is a collection of demos that I use in my blog.</p>
+    </header>
+    <nz-demo>
+      <h2 slot="title">Hamburger menu with <code>text-decoration</code></h2>
+      <p slot="description">
+        Inspired by
+        <a
+          href="https://www.youtube.com/watch?v=x3MTfp3HDLc"
+          rel="noreferrer noopener"
+        >
+          Kevin Powell's video
+        </a>
+        , this is an example of a simple "hamburger" style menu button with
+        <code>text-decoration</code>.
+      </p>
+      <main slot="html">
+        <header>
+          <button
+            aria-controls="primary-nav"
+            aria-expanded="false"
+            aria-label="Toggle navigation menu"
+            class="toggle-button"
+          ></button>
+          <nav id="primary-nav">
+            <ul>
+              <li>
+                <a href="#">Home</a>
+              </li>
+              <li>
+                <a href="#">About</a>
+              </li>
+              <li>
+                <a href="#">Contact</a>
+              </li>
+            </ul>
+          </nav>
+        </header>
+      </main>
+      <style slot="css">
+        .toggle-button {
+          text-decoration-line: underline line-through overline;
+        }
+      </style>
+    </nz-demo>
+  </main>
+</template>

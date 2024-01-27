@@ -14,4 +14,5 @@ app.use(async (context, next) => {
   }
 });
 
+console.log(`Listening on port ${env("PORT")}`);
 await app.listen({ port: env("PORT") });

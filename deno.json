@@ -6,6 +6,15 @@
     "assert": "https://deno.land/std@0.207.0/assert/mod.ts",
     "dotenv": "https://deno.land/std@0.208.0/dotenv/mod.ts",
     "oak": "https://deno.land/x/oak@v12.6.1/mod.ts",
-    "zodenv": "https://deno.land/x/zodenv@v2.0.1/mod.ts"
+    "zodenv": "https://deno.land/x/zodenv@v2.0.1/mod.ts",
+    "nzjs": "https://cdn.jsdelivr.net/npm/nzjs/index.d.ts"
+  },
+  "compilerOptions": {
+    "lib": ["deno.window", "esnext", "dom", "dom.iterable"],
+    "strict": true,
+    "strictNullChecks": true,
+    "strictBindCallApply": true,
+    "strictPropertyInitialization": true,
+    "strictFunctionTypes": true
   }
 }

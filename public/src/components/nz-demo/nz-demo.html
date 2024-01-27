@@ -1,0 +1,78 @@
+<template>
+  <style>
+    #demo {
+      display: grid;
+      gap: 1rem;
+
+      & > header {
+        display: grid;
+        gap: 1rem;
+      }
+
+      & > #demo-content {
+        display: grid;
+        gap: 0;
+      }
+    }
+
+    [role="tablist"] {
+      display: flex;
+      gap: 0.5rem;
+      justify-content: space-between;
+    }
+
+    [role="tab"] {
+      flex: 1;
+      border-top-left-radius: var(--br-lg);
+      border-top-right-radius: var(--br-lg);
+      border-bottom-left-radius: 0;
+      border-bottom-right-radius: 0;
+      background-color: hsl(var(--theme-light));
+      color: hsl(var(--fg-color));
+    }
+
+    [role="tabpanel"] {
+      height: 25rem;
+      overflow: auto;
+      border: 2px solid hsl(var(--theme-light));
+      border-bottom-left-radius: var(--br-lg);
+      border-bottom-right-radius: var(--br-lg);
+      padding: 1rem;
+
+      & > code {
+        white-space: pre;
+      }
+    }
+  </style>
+  <section id="demo">
+    <header>
+      <slot name="title"></slot>
+      <slot name="description"></slot>
+    </header>
+    <div id="demo-content">
+      <div aria-label="Demo tabs" role="tablist">
+        <button
+          role="tab"
+          aria-selected="true"
+          aria-controls="demo-result"
+          id="demo-result-tab"
+          tabindex="0"
+        >
+          Result
+        </button>
+      </div>
+      <div role="tabpanel" aria-labelledby="demo-result-tab" id="demo-result">
+        <slot></slot>
+      </div>
+      <div role="tabpanel" id="demo-html" hidden>
+        <slot name="html"></slot>
+      </div>
+      <div role="tabpanel" id="demo-css" hidden>
+        <slot name="css"></slot>
+      </div>
+      <div role="tabpanel" id="demo-js" hidden>
+        <slot name="js"></slot>
+      </div>
+    </div>
+  </section>
+</template>
