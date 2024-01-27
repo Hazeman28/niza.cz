@@ -1,0 +1,46 @@
+<template>
+  <nz-demo>
+    <h2 slot="title">Simple counter component using <code>nzjs</code></h2>
+    <p slot="description">
+      Very simple counter component using my library
+      <a
+        href="https://www.npmjs.com/package/nzjs#nz"
+        target="_blank"
+        rel="noreferrer noopener"
+      >
+        nzjs </a
+      >.
+    </p>
+    <nz-counter></nz-counter>
+    <main slot="html">
+      <template>
+        <button type="button">
+          <slot></slot>
+        </button>
+      </template>
+    </main>
+    <script slot="js">
+      /** @type {CustomElementDefinition<"nz-counter">} */
+      export const definition = {
+        name: "nz-counter",
+        moduleUrl: import.meta.url,
+        init({ shadowRoot }) {
+          let count = 0;
+
+          const button = shadowRoot.querySelector("button");
+
+          function setCount(value = count) {
+            button.textContent = `Count: ${value}`;
+          }
+
+          button.addEventListener("click", () => {
+            count++;
+            setCount();
+          });
+
+          setCount(count);
+        },
+      };
+    </script>
+  </nz-demo>
+</template>

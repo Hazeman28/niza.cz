@@ -94,7 +94,7 @@ function renderShadowRootTabButtons(slots) {
     const stringifiedNodes = nodes
       .map((node) => {
         if (node instanceof HTMLElement) {
-          return ["css", "js"].includes(key) ? node.innerHTML : node.outerHTML;
+          return node.innerHTML;
         }
 
         return node.textContent;
