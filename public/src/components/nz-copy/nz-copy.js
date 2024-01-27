@@ -3,8 +3,9 @@ export const definition = {
   name: "nz-copy",
   moduleUrl: import.meta.url,
   init({ shadowRoot }) {
-    const checkIcon = shadowRoot.getElementById("check-icon");
-    const clipboardIcon = shadowRoot.getElementById("clipboard-icon");
+    const checkIcon = shadowRoot.querySelector("icon-check");
+    const clipboardIcon = shadowRoot.querySelector("icon-clipboard");
+
     const button = shadowRoot.querySelector("button");
 
     if (!button) {

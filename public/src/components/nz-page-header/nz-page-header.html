@@ -1,0 +1,52 @@
+<template>
+  <style>
+    header {
+      --base-color: hsl(var(--theme-accent));
+
+      display: grid;
+      grid-column: full-start / full-end;
+      grid-template-columns: subgrid;
+      max-width: 100%;
+      padding-top: 20vh;
+      padding-bottom: 2rem;
+      position: relative;
+
+      & > *,
+      & > ::slotted(*) {
+        grid-column: main-start / main-end;
+      }
+
+      &::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        z-index: -1;
+        background-image: linear-gradient(
+          var(--base-color),
+          hsl(var(--theme-light) / 0.4)
+        );
+      }
+
+      &::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        z-index: -2;
+        background-image: url("/assets/bg/noise.svg");
+        background-repeat: repeat;
+      }
+    }
+
+    .home-link {
+      margin-top: 2rem;
+      color: inherit;
+    }
+  </style>
+  <header>
+    <slot></slot>
+    <a class="home-link" href="/">
+      <icon-arrow-left></icon-arrow-left>
+      Back to home
+    </a>
+  </header>
+</template>

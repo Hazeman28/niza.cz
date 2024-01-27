@@ -20,6 +20,10 @@
         right: 1rem;
         bottom: 1rem;
       }
+
+      &:has(#demo-result-tab[aria-selected="true"]) nz-copy {
+        display: none;
+      }
     }
 
     [role="tablist"] {
