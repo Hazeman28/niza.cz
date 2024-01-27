@@ -20,10 +20,6 @@
         right: 1rem;
         bottom: 1rem;
       }
-
-      &:has(#demo-result-tab[aria-selected="true"]) nz-copy {
-        display: none;
-      }
     }
 
     [role="tablist"] {
@@ -100,7 +96,7 @@
       <div role="tabpanel" id="demo-js" hidden>
         <slot name="js"></slot>
       </div>
-      <nz-copy></nz-copy>
+      <nz-copy hidden></nz-copy>
     </div>
   </section>
 </template>

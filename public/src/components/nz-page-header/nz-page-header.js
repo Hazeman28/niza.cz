@@ -10,4 +10,11 @@ export const definition = {
       },
     },
   },
+  init({ shadowRoot }) {
+    const homeLink = shadowRoot.querySelector("a.home-link");
+
+    if (location.pathname === "/") {
+      homeLink.hidden = true;
+    }
+  },
 };

@@ -35,6 +35,8 @@
 
     --bg-color: hsl(var(--theme-white));
     --fg-color: hsl(var(--theme-dark));
+
+    --content-width: 69ch;
   }
 
   *:focus-visible {
@@ -78,6 +80,7 @@
     font-size: 3rem;
     font-weight: 900;
     max-width: 15ch;
+    line-height: 1.1;
   }
 
   h2,
@@ -85,6 +88,7 @@
     font-size: 2.5rem;
     font-weight: 800;
     max-width: 25ch;
+    line-height: 1.1;
   }
 
   h3,
@@ -92,6 +96,7 @@
     font-size: 2rem;
     font-weight: 700;
     max-width: 35ch;
+    line-height: 1.1;
   }
 
   h4,
@@ -99,6 +104,7 @@
     font-size: 1.5rem;
     font-weight: 700;
     max-width: 40ch;
+    line-height: 1.1;
   }
 
   h5,
@@ -106,6 +112,7 @@
     font-size: 1.25rem;
     font-weight: 600;
     max-width: 45ch;
+    line-height: 1.1;
   }
 
   h6,
@@ -113,6 +120,7 @@
     font-size: 1.125rem;
     font-weight: 600;
     max-width: 50ch;
+    line-height: 1.1;
   }
 
   p {
@@ -134,11 +142,14 @@
 
   main:not([slot]) {
     display: grid;
-    gap: 2rem 0rem;
+    gap: 3rem 0rem;
     place-content: center;
     padding-top: 3rem;
     grid-template-columns:
-      [full-start] minmax(1rem, 1fr) [main-start] minmax(0, 69ch)
+      [full-start] minmax(1rem, 1fr) [main-start] minmax(
+        0,
+        var(--content-width)
+      )
       [main-end] minmax(1rem, 1fr) [full-end];
 
     & > * {
@@ -160,11 +171,35 @@
     }
 
     &.extra-gap {
-      gap: 4rem 0rem;
+      gap: 5rem 0rem;
     }
 
     &.items-center {
       place-items: center;
+    }
+  }
+
+  .noise {
+    --base-color: hsl(var(--theme-accent));
+
+    &::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: -1;
+      background-image: linear-gradient(
+        var(--base-color),
+        hsl(var(--theme-light) / 0.4)
+      );
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: -2;
+      background-image: url("/assets/bg/noise.svg");
+      background-repeat: repeat;
     }
   }
 

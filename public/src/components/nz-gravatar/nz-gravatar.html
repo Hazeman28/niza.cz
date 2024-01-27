@@ -6,11 +6,21 @@
       width: var(--size);
       height: var(--size);
       object-fit: cover;
+    }
+
+    .wrapper {
+      position: relative;
       border-radius: var(--br-full);
+      overflow: hidden;
     }
   </style>
-  <img
-    alt="Profile picture of Niza Toshpulatov"
-    src="https://gravatar.com/avatar/bff29ca57f4b63e6dfe93c1e5af9624e?s=512"
-  />
+  <div class="wrapper">
+    <div class="noise"></div>
+    <img
+      alt="Photo of Niza Toshpulatov"
+      src="https://gravatar.com/avatar/bff29ca57f4b63e6dfe93c1e5af9624e?s=512"
+      width="160"
+      height="160"
+    />
+  </div>
 </template>

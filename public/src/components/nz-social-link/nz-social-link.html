@@ -1,23 +1,20 @@
 <template>
   <style>
-    .social-link {
-      --size: 2rem;
-      --mask: var(--icon-url) no-repeat center;
+    a {
+      color: var(--fg-color);
+      line-height: 0;
 
-      display: block;
-      position: relative;
-      background-color: currentColor;
-      width: var(--size);
-      height: var(--size);
+      &:hover {
+        filter: brightness(0.8);
+      }
 
-      -webkit-mask: var(--mask);
-      -webkit-mask-size: var(--size);
-
-      mask: var(--mask);
-      mask-size: var(--size);
+      &:focus-visible {
+        outline-color: currentColor;
+        outline-offset: 6px;
+      }
     }
   </style>
-  <a class="social-link" target="_blank">
+  <a target="_blank" rel="noopener noreferrer">
     <slot></slot>
   </a>
 </template>

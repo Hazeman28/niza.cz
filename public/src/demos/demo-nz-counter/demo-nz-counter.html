@@ -8,8 +8,9 @@
         target="_blank"
         rel="noreferrer noopener"
       >
-        nzjs </a
-      >.
+        nzjs
+      </a>
+      &period;
     </p>
     <nz-counter></nz-counter>
     <main slot="html">
@@ -29,8 +30,8 @@
 
           const button = shadowRoot.querySelector("button");
 
-          function setCount(value = count) {
-            button.textContent = `Count: ${value}`;
+          function setCount() {
+            button.textContent = `Count: ${count}`;
           }
 
           button.addEventListener("click", () => {
@@ -38,7 +39,7 @@
             setCount();
           });
 
-          setCount(count);
+          setCount();
         },
       };
     </script>

@@ -7,8 +7,8 @@ export const definition = {
 
     const button = shadowRoot.querySelector("button");
 
-    function setCount(value = count) {
-      button.textContent = `Count: ${value}`;
+    function setCount() {
+      button.textContent = `Count: ${count}`;
     }
 
     button.addEventListener("click", () => {
@@ -16,6 +16,6 @@ export const definition = {
       setCount();
     });
 
-    setCount(count);
+    setCount();
   },
 };

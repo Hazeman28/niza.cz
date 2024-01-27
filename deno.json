@@ -1,6 +1,7 @@
 {
   "tasks": {
-    "dev": "deno run --watch --allow-all main.ts"
+    "dev": "deno run --watch --allow-all main.ts",
+    "deploy": "deployctl deploy --project=niza --prod --exclude=node_modules main.ts"
   },
   "imports": {
     "assert": "https://deno.land/std@0.207.0/assert/mod.ts",

@@ -1,5 +1,7 @@
 "use strict";
 
+const RESULT_TAB_ID = "demo-result-tab";
+
 /** @type {CustomElementDefinition<"nz-demo">} */
 export const definition = {
   name: "nz-demo",
@@ -21,7 +23,8 @@ export const definition = {
       tab.addEventListener("click", function () {
         toggleTab(this, true);
 
-        copyButton.dataset.text = formattedCode;
+        copyButton.hidden = tab.id === RESULT_TAB_ID;
+        copyButton.copyText = formattedCode;
 
         tabs.forEach(([tab]) => {
           tab !== this ? toggleTab(tab, false) : undefined;
@@ -38,7 +41,7 @@ export const definition = {
  */
 function renderShadowRootTabButtons(slots) {
   const tabList = this.shadowRoot.querySelector(`[role="tablist"]`);
-  const resultTab = this.shadowRoot.querySelector(`#demo-result-tab`);
+  const resultTab = this.shadowRoot.querySelector(`#${RESULT_TAB_ID}`);
 
   if (!tabList || !resultTab) {
     console.error("Could not find tab list or result tab.");

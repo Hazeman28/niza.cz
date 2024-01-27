@@ -3,20 +3,14 @@
     .info-section {
       display: grid;
       gap: 1.5rem;
-      text-align: center;
-      justify-items: center;
-    }
-
-    .info-section > header {
-      display: grid;
-      gap: 1rem;
-      justify-items: center;
+      justify-items: flex-start;
     }
 
     .social-link-list {
       display: flex;
       flex-wrap: wrap;
-      justify-content: center;
+      align-items: flex-start;
+      justify-content: flex-start;
       gap: 1rem 2rem;
       list-style: none;
       padding: 0;
@@ -27,50 +21,48 @@
     <meta name="description" content="Niza's personal page" />
   </nz-head>
   <main class="extra-gap">
-    <section class="info-section">
-      <header>
-        <nz-gravatar></nz-gravatar>
-        <h1>Hi, I'm Niza!</h1>
-        <p>
-          Welcome to my page. Currently I'm working as a web developer. I enjoy
-          creating things and in my free time I like to compose music.
-        </p>
-        <ul class="social-link-list">
-          <li>
-            <nz-social-link
-              icon="github-original"
-              href="https://github.com/nizamiza"
-            >
-              My GitHub profile
-            </nz-social-link>
-          </li>
-          <li>
-            <nz-social-link
-              icon="linkedin-original"
-              href="https://www.linkedin.com/in/niza-toshpulatov-27223b233/"
-            >
-              My LinkedIn profile
-            </nz-social-link>
-          </li>
-          <li>
-            <nz-social-link
-              icon="spotify-original"
-              href="https://open.spotify.com/artist/2ddaqi6mbLWcpPKZwZvYky?si=KBbMeSMYTkWwByjGkIL1XQ"
-            >
-              My Spotify profile
-            </nz-social-link>
-          </li>
-          <li>
-            <nz-social-link
-              href="https://www.youtube.com/channel/UCWcOtEVT1KVRPZ0j-pumVZA"
-              icon="youtube"
-            >
-              My YouTube profile
-            </nz-social-link>
-          </li>
-        </ul>
-      </header>
-    </section>
+    <nz-page-header color="orange">
+      <nz-gravatar></nz-gravatar>
+      <h1>Hi, I'm Niza!</h1>
+      <p>
+        Welcome to my page. Currently I'm working as a web developer. I enjoy
+        creating things and in my free time I like to compose music.
+      </p>
+      <ul class="social-link-list">
+        <li>
+          <nz-social-link
+            aria-label="My GitHub profile"
+            href="https://github.com/nizamiza"
+          >
+            <icon-github></icon-github>
+          </nz-social-link>
+        </li>
+        <li>
+          <nz-social-link
+            aria-label="My LinkedIn profile"
+            href="https://www.linkedin.com/in/niza-toshpulatov-27223b233/"
+          >
+            <icon-linkedin></icon-linkedin>
+          </nz-social-link>
+        </li>
+        <li>
+          <nz-social-link
+            aria-label="My Spotify profile"
+            href="https://open.spotify.com/artist/2ddaqi6mbLWcpPKZwZvYky?si=KBbMeSMYTkWwByjGkIL1XQ"
+          >
+            <icon-music></icon-music>
+          </nz-social-link>
+        </li>
+        <li>
+          <nz-social-link
+            aria-label="My YouTube profile"
+            href="https://www.youtube.com/channel/UCWcOtEVT1KVRPZ0j-pumVZA"
+          >
+            <icon-youtube></icon-youtube>
+          </nz-social-link>
+        </li>
+      </ul>
+    </nz-page-header>
     <section class="info-section">
       <h2>Blog</h2>
       <p>

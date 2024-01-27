@@ -5,10 +5,7 @@ export const definition = {
   attributeMap: {
     a: {
       href: true,
-      style() {
-        const iconName = this.attributes.getNamedItem("icon")?.value;
-        return `--icon-url: url("/assets/icons/${iconName}.svg")`;
-      },
+      "aria-label": true,
     },
   },
 };
