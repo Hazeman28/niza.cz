@@ -3,15 +3,22 @@
     #demo {
       display: grid;
       gap: 1rem;
+    }
 
-      & > header {
-        display: grid;
-        gap: 1rem;
-      }
+    header {
+      display: grid;
+      gap: 1rem;
+    }
 
-      & > #demo-content {
-        display: grid;
-        gap: 0;
+    #demo-content {
+      display: grid;
+      gap: 0;
+      position: relative;
+
+      & > nz-copy {
+        position: absolute;
+        right: 1rem;
+        bottom: 1rem;
       }
     }
 
@@ -28,16 +35,33 @@
       border-bottom-left-radius: 0;
       border-bottom-right-radius: 0;
       background-color: hsl(var(--theme-light));
-      color: hsl(var(--fg-color));
+      color: var(--fg-color);
+
+      &[aria-selected="true"] {
+        background-color: var(--fg-color);
+        color: var(--bg-color);
+      }
+
+      &:hover {
+        filter: brightness(1.1);
+
+        &[aria-selected="true"] {
+          filter: brightness(0.9);
+        }
+      }
     }
 
-    [role="tabpanel"] {
+    [role="tabpanel"]:not([hidden]) {
+      display: flex;
+      flex-direction: column;
       height: 25rem;
       overflow: auto;
       border: 2px solid hsl(var(--theme-light));
       border-bottom-left-radius: var(--br-lg);
       border-bottom-right-radius: var(--br-lg);
       padding: 1rem;
+      resize: vertical;
+      position: relative;
 
       & > code {
         white-space: pre;
@@ -56,7 +80,6 @@
           aria-selected="true"
           aria-controls="demo-result"
           id="demo-result-tab"
-          tabindex="0"
         >
           Result
         </button>
@@ -73,6 +96,7 @@
       <div role="tabpanel" id="demo-js" hidden>
         <slot name="js"></slot>
       </div>
+      <nz-copy></nz-copy>
     </div>
   </section>
 </template>

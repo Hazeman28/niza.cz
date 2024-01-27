@@ -37,6 +37,14 @@
     --fg-color: hsl(var(--theme-dark));
   }
 
+  *:focus-visible {
+    --thickness: 1.5px;
+
+    outline-width: var(--thickness);
+    outline-color: hsl(var(--theme-accent));
+    outline-offset: calc(var(--thickness) * 2);
+  }
+
   html {
     color-scheme: light dark;
   }
@@ -51,7 +59,11 @@
   }
 
   a {
+    --thickness: 0.125em;
+
     color: hsl(var(--theme-accent));
+    text-decoration-thickness: var(--thickness);
+    text-underline-offset: calc(var(--thickness) * 2);
   }
 
   h1,
@@ -201,6 +213,37 @@
 
     main:not([slot]) {
       padding-top: 7rem;
+    }
+  }
+}
+
+@layer overwrite {
+  .initial {
+    all: initial;
+  }
+
+  .unset {
+    all: unset;
+  }
+
+  .revert {
+    all: revert;
+  }
+
+  :is(.initial, .unset, .revert) {
+    color: inherit;
+
+    &:focus-visible {
+      --thickness: 1.5px;
+
+      outline-style: solid;
+      outline-width: var(--thickness);
+      outline-color: hsl(var(--theme-accent));
+      outline-offset: calc(var(--thickness) * 2);
+    }
+
+    &:is(button) {
+      cursor: pointer;
     }
   }
 }

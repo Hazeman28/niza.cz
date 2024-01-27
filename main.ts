@@ -1,3 +1,5 @@
+/// <reference path="./node_modules/nzjs/index.d.ts" />
+
 import { Application } from "oak";
 import { env } from "./env.ts";
 

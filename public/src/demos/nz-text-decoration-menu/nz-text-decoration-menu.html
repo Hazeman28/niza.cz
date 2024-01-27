@@ -1,0 +1,130 @@
+<template>
+  <nz-demo>
+    <h2 slot="title">Hamburger menu with <code>text-decoration</code></h2>
+    <p slot="description">
+      Inspired by
+      <a
+        href="https://www.youtube.com/watch?v=x3MTfp3HDLc"
+        target="_blank"
+        rel="noreferrer noopener"
+      >
+        Kevin Powell's video
+      </a>
+      , this is an example of a simple "hamburger" style menu button with
+      <code>text-decoration</code>.
+    </p>
+    <main slot="html">
+      <header class="header">
+        <button
+          aria-controls="primary-nav"
+          aria-expanded="false"
+          aria-label="Toggle navigation menu"
+          class="toggle-button initial"
+          onclick="toggleNav.call(this)"
+        ></button>
+        <nav hidden id="primary-nav">
+          <ul>
+            <li>
+              <a href="#">Home</a>
+            </li>
+            <li>
+              <a href="#">About</a>
+            </li>
+            <li>
+              <a href="#">Contact</a>
+            </li>
+          </ul>
+        </nav>
+      </header>
+    </main>
+    <script slot="js">
+      /**
+       * @this {HTMLButtonElement}
+       */
+      function toggleNav() {
+        const expanded = this.getAttribute("aria-expanded") === "true";
+        const nav = this.parentElement.querySelector(
+          `#${this.getAttribute("aria-controls")}`
+        );
+
+        this.setAttribute("aria-expanded", !expanded);
+        nav.hidden = expanded;
+      }
+    </script>
+    <style slot="css">
+      .toggle-button {
+        --thickness: 1.5px;
+        --offset: 5px;
+        --size: calc(var(--offset) * 5 + var(--thickness) * 2);
+
+        &::after {
+          content: attr(aria-label);
+          color: transparent;
+        }
+
+        text-decoration-skip-ink: none;
+        text-decoration-line: underline line-through overline;
+        text-decoration-thickness: var(--thickness);
+        text-underline-offset: var(--offset);
+        width: var(--size);
+        aspect-ratio: 1;
+        white-space: nowrap;
+        overflow: hidden;
+        padding: 0;
+        border: var(--thickness) solid transparent;
+        background-color: transparent;
+        cursor: pointer;
+
+        &[aria-expanded="true"] {
+          text-decoration-line: line-through;
+          text-decoration-style: wavy;
+          border-color: currentColor;
+          border-radius: 0.25em;
+        }
+
+        &:focus {
+          outline-width: var(--thickness);
+          outline-color: currentColor;
+          outline-offset: 6px;
+        }
+      }
+
+      .header {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        align-items: center;
+        background-color: color-mix(in srgb, currentColor, transparent 90%);
+        padding: 0.5rem;
+        border-radius: 0.5rem;
+      }
+
+      #primary-nav {
+        & > ul {
+          list-style: none;
+          padding: 0;
+          margin: 0;
+          display: flex;
+          flex-direction: column;
+          gap: 1rem;
+          text-align: center;
+
+          & a {
+            color: currentColor;
+            text-decoration: none;
+            padding: 0.25em;
+            border-radius: 0.25em;
+
+            &:hover {
+              background-color: color-mix(
+                in srgb,
+                currentColor,
+                transparent 80%
+              );
+            }
+          }
+        }
+      }
+    </style>
+  </nz-demo>
+</template>
