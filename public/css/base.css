@@ -127,6 +127,22 @@
     font-size: 5rem;
   }
 
+  .page-header {
+    display: grid;
+    grid-column: full-start / full-end;
+    grid-template-columns: subgrid;
+    justify-items: flex-start;
+    gap: 1rem;
+    max-width: 100%;
+    padding-top: 20vh;
+    padding-bottom: 2rem;
+    position: relative;
+
+    & > * {
+      grid-column: main-start / main-end;
+    }
+  }
+
   p {
     max-width: 69ch;
   }
@@ -164,13 +180,13 @@
       grid-column: full-start / full-end;
     }
 
-    & > nz-page-header {
+    & > :is(nz-page-header, .page-header) {
       display: grid;
       grid-template-columns: subgrid;
       grid-column: full-start / full-end;
     }
 
-    &:has(> nz-page-header) {
+    &:has(> nz-page-header, > .page-header) {
       padding-top: 0;
     }
 

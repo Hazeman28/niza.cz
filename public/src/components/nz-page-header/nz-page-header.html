@@ -1,20 +1,6 @@
 <template>
   <style>
     header {
-      display: grid;
-      grid-column: full-start / full-end;
-      grid-template-columns: subgrid;
-      justify-items: flex-start;
-      gap: 1rem;
-      max-width: 100%;
-      padding-top: 20vh;
-      padding-bottom: 2rem;
-      position: relative;
-
-      & > * {
-        grid-column: main-start / main-end;
-      }
-
       & > ::slotted(*) {
         grid-column: main-start / main-end;
       }
@@ -29,7 +15,7 @@
       }
     }
   </style>
-  <header class="noise">
+  <header class="page-header noise">
     <slot></slot>
     <a class="home-link" href="/">
       <icon-arrow-left></icon-arrow-left>
