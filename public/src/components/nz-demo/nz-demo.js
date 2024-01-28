@@ -24,7 +24,7 @@ export const definition = {
         toggleTab(this, true);
 
         copyButton.hidden = tab.id === RESULT_TAB_ID;
-        copyButton.copyText = formattedCode;
+        copyButton.dataset.text = formattedCode;
 
         tabs.forEach(([tab]) => {
           tab !== this ? toggleTab(tab, false) : undefined;
