@@ -76,7 +76,7 @@
   }
 
   h1,
-  [data-as="h1"] {
+  .h1 {
     font-size: 3rem;
     font-weight: 900;
     max-width: 15ch;
@@ -84,7 +84,7 @@
   }
 
   h2,
-  [data-as="h2"] {
+  .h2 {
     font-size: 2.5rem;
     font-weight: 800;
     max-width: 25ch;
@@ -92,7 +92,7 @@
   }
 
   h3,
-  [data-as="h3"] {
+  .h3 {
     font-size: 2rem;
     font-weight: 700;
     max-width: 35ch;
@@ -100,7 +100,7 @@
   }
 
   h4,
-  [data-as="h4"] {
+  .h4 {
     font-size: 1.5rem;
     font-weight: 700;
     max-width: 40ch;
@@ -108,7 +108,7 @@
   }
 
   h5,
-  [data-as="h5"] {
+  .h5 {
     font-size: 1.25rem;
     font-weight: 600;
     max-width: 45ch;
@@ -116,11 +116,15 @@
   }
 
   h6,
-  [data-as="h6"] {
+  .h6 {
     font-size: 1.125rem;
     font-weight: 600;
     max-width: 50ch;
     line-height: 1.1;
+  }
+
+  .giga-emoji {
+    font-size: 5rem;
   }
 
   p {

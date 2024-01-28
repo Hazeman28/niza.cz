@@ -1,18 +1,29 @@
 /// <reference path="https://cdn.jsdelivr.net/npm/nzjs/index.d.ts" />
 
-import { Application } from "oak";
+import { Application, isHttpError } from "oak";
 import { env } from "./env.ts";
 
 const app = new Application();
 
-app.use(async (context, next) => {
+app.use(async (ctx) => {
   try {
-    await context.send({
+    await ctx.send({
       root: `${Deno.cwd()}/public`,
       index: "index.html",
     });
-  } catch {
-    next();
+  } catch (error) {
+    if (isHttpError(error)) {
+      await ctx.send({
+        root: `${Deno.cwd()}/public`,
+        path: "404.html",
+      });
+    } else {
+      console.error(error);
+      await ctx.send({
+        root: `${Deno.cwd()}/public`,
+        path: "500.html",
+      });
+    }
   }
 });
 
