@@ -1,0 +1,56 @@
+<template>
+  <nz-head>
+    <title>Experience</title>
+    <meta name="description" content="My work experience" />
+  </nz-head>
+  <main>
+    <nz-page-header color="purple">
+      <h1>Experience</h1>
+      <p>Here you can find a timeline of my work experience.</p>
+    </nz-page-header>
+    <nz-timeline>
+      <nz-timeline-item
+        data-period-start="2021-09-01"
+        data-period-end="2024-04-01"
+      >
+        <h3 slot="summary">CTO, Head of HR</h3>
+        <footer slot="footer">
+          <uniit-link></uniit-link>
+        </footer>
+        <nz-markdown>
+          <!-- prettier-ignore -->
+        </nz-markdown>
+      </nz-timeline-item>
+      <nz-timeline-item
+        data-period-start="2020-05-01"
+        data-period-end="2021-09-01"
+      >
+        <h3 slot="summary">Full Stack Web Developer</h3>
+        <footer slot="footer">
+          <uniit-link></uniit-link>
+        </footer>
+        <nz-markdown>
+          <!-- prettier-ignore -->
+        </nz-markdown>
+      </nz-timeline-item>
+      <nz-timeline-item
+        data-period-start="2015-04-01"
+        data-period-end="2020-09-01"
+      >
+        <h3 slot="summary">Graphic Designer (Freelance)</h3>
+        <footer slot="footer">
+          <a
+            href="https://99designs.com/profiles/nizamiza"
+            target="_blank"
+            rel="noreferrer noopener"
+          >
+            99designs
+          </a>
+        </footer>
+        <nz-markdown>
+          <!-- prettier-ignore -->
+        </nz-markdown>
+      </nz-timeline-item>
+    </nz-timeline>
+  </main>
+</template>

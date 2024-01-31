@@ -1,0 +1,97 @@
+<template>
+  <style>
+    details {
+      --gap: 1.5rem;
+      --padding: 1rem;
+      --active-bg: hsl(var(--theme-light) / 0.3);
+      --indicator-size: 1rem;
+
+      border-radius: var(--br-lg);
+      container-type: inline-size;
+
+      &[open] {
+        background-color: var(--active-bg);
+
+        & > summary {
+          &::before {
+            background-color: currentColor;
+          }
+        }
+      }
+    }
+
+    summary {
+      display: grid;
+      gap: 0.5rem 1rem;
+      grid:
+        "......... period period"
+        "indicator title  title" / var(--indicator-size) 1fr 1fr;
+      align-items: flex-start;
+      list-style: none;
+      position: relative;
+      padding: var(--padding);
+      border-radius: var(--br-lg);
+      transition: background-color var(--td-fast) ease-in-out;
+
+      &::-webkit-details-marker {
+        display: none;
+      }
+
+      &::before {
+        content: "";
+        grid-area: indicator;
+        width: var(--indicator-size);
+        height: var(--indicator-size);
+        border-radius: var(--br-full);
+        border: 2px solid currentColor;
+        margin-top: 0.5lh;
+        transition: background-color var(--td-normal) ease-in-out;
+      }
+
+      &:hover {
+        cursor: pointer;
+        background-color: var(--active-bg);
+      }
+
+      & > .period {
+        grid-area: period;
+        font-size: var(--fs-caption);
+        font-family: var(--ff-mono);
+      }
+
+      & > ::slotted(*) {
+        grid-area: title;
+      }
+
+      @container (min-width: 40rem) {
+        grid: "period indicator title" / 16ch var(--indicator-size) 1fr;
+        gap: 1rem;
+
+        & > .period {
+          margin-top: 0.5lh;
+          text-align: right;
+        }
+      }
+    }
+
+    #content {
+      padding: var(--padding);
+    }
+
+    ::slotted([slot="footer"]) {
+      padding-block: 1rem;
+      font-family: var(--ff-mono);
+      font-size: var(--fs-caption);
+    }
+  </style>
+  <details>
+    <summary>
+      <slot name="summary"></slot>
+      <slot name="period"></slot>
+    </summary>
+    <div id="content">
+      <slot></slot>
+      <slot name="footer"></slot>
+    </div>
+  </details>
+</template>

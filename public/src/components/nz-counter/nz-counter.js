@@ -3,19 +3,15 @@ export const definition = {
   name: "nz-counter",
   moduleUrl: import.meta.url,
   init({ shadowRoot }) {
-    let count = 0;
-
+    let count = -1;
     const button = shadowRoot.querySelector("button");
 
-    function setCount() {
-      button.textContent = `Count: ${count}`;
-    }
-
-    button.addEventListener("click", () => {
+    const increment = () => {
       count++;
-      setCount();
-    });
+      button.textContent = `Count: ${count}`;
+    };
 
-    setCount();
+    increment();
+    button.onclick = increment;
   },
 };

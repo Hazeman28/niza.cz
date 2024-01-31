@@ -1,4 +1,18 @@
-"use strict";
+import hljs from "https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.9.0/build/es/core.js";
+import xml from "https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.9.0/build/es/languages/xml.min.js";
+import css from "https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.9.0/build/es/languages/css.min.js";
+import js from "https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.9.0/build/es/languages/javascript.min.js";
+import { stripIndent } from "/src/shared/utils.js";
+
+const HIGHLIGHT_LANGUAGES = {
+  xml,
+  css,
+  js,
+};
+
+for (const [name, definition] of Object.entries(HIGHLIGHT_LANGUAGES)) {
+  hljs.registerLanguage(name, definition);
+}
 
 const RESULT_TAB_ID = "demo-result-tab";
 
@@ -121,23 +135,6 @@ function renderShadowRootTabButtons(slots) {
   }
 
   return tabs;
-}
-
-/**
- * @param {string} string
- * @returns {string}
- */
-function stripIndent(string) {
-  const match = string.match(/^[ \t]*(?=\S)/gm)?.filter((m) => m);
-
-  if (!match) {
-    return string;
-  }
-
-  const indent = Math.min(...match.map((m) => m.length));
-  const re = new RegExp(`^[ \\t]{${indent}}`, "gm");
-
-  return string.replace(re, "");
 }
 
 /**

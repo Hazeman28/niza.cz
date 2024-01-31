@@ -36,6 +36,14 @@
     --bg-color: hsl(var(--theme-white));
     --fg-color: hsl(var(--theme-dark));
 
+    --ff-sans-serif: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI",
+      "Helvetica Neue", sans-serif;
+    --ff-mono: "JetBrains Mono", monospace;
+    --fs-base: 1rem;
+    --fs-label: 0.875rem;
+    --fs-caption: 0.825rem;
+    --fs-note: 0.75rem;
+
     --content-width: 69ch;
   }
 
@@ -56,8 +64,7 @@
     flex-direction: column;
     color: var(--fg-color);
     background-color: var(--bg-color);
-    font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI",
-      "Helvetica Neue", sans-serif;
+    font-family: var(--ff-sans-serif);
   }
 
   a {
@@ -73,6 +80,21 @@
     & > * {
       display: inline-flex;
     }
+  }
+
+  h1,
+  .h1,
+  h2,
+  .h2,
+  h3,
+  .h3,
+  h4,
+  .h4,
+  h5,
+  .h5,
+  h6,
+  .h6 {
+    text-wrap: balance;
   }
 
   h1,

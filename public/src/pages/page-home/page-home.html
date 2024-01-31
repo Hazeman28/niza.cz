@@ -1,11 +1,5 @@
 <template>
   <style>
-    .info-section {
-      display: grid;
-      gap: 1.5rem;
-      justify-items: flex-start;
-    }
-
     .social-link-list {
       display: flex;
       flex-wrap: wrap;
@@ -63,21 +57,29 @@
         </li>
       </ul>
     </nz-page-header>
-    <section class="info-section">
+    <nz-container>
       <h2>Blog</h2>
       <p>
         I have a blog at <a href="https://world.hey.com/niza">HEY World</a>. I
         tend to post all kinds of things related to my work and interests. Check
         it out if you're interested.
       </p>
-    </section>
-    <section class="info-section">
+    </nz-container>
+    <nz-container>
       <h2>Demos</h2>
       <p>
         I've started to collect demos for my blog posts here as well. You can
         check them out if you're interested.
       </p>
       <a href="/demos.html">Demos</a>
-    </section>
+    </nz-container>
+    <nz-container>
+      <h2>Experience</h2>
+      <p>
+        If you want to learn more about my work experience, you can check out
+        the timeline here.
+      </p>
+      <a href="/experience.html">Experience</a>
+    </nz-container>
   </main>
 </template>
