@@ -13,13 +13,13 @@
       &period;
     </p>
     <nz-counter></nz-counter>
-    <main slot="html">
+    <div slot="html">
       <template>
         <button type="button">
           <slot></slot>
         </button>
       </template>
-    </main>
+    </div>
     <script slot="js">
       /** @type {CustomElementDefinition<"nz-counter">} */
       export const definition = {

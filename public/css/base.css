@@ -2,6 +2,8 @@
 
 @layer base {
   :root {
+    --color-scheme: light;
+
     /* Theme, HSL components. Usage example: hsl(var(--theme-accent)); */
     --theme-accent: 221 50% 28%;
     --theme-dark: 221 19% 20%;
@@ -47,6 +49,20 @@
     --content-width: 69ch;
   }
 
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --color-scheme: dark;
+
+      --theme-accent: 221 50% 80%;
+      --theme-dark: 221 19% 70%;
+      --theme-light: 240 23% 32%;
+      --theme-neutral: 214 4% 88%;
+
+      --bg-color: hsl(var(--theme-black));
+      --fg-color: hsl(var(--theme-white));
+    }
+  }
+
   *:focus-visible {
     --thickness: 1.5px;
 
@@ -56,7 +72,7 @@
   }
 
   html {
-    color-scheme: light dark;
+    color-scheme: var(--color-scheme);
   }
 
   body {
@@ -182,6 +198,14 @@
     cursor: pointer;
   }
 
+  :is(ul, ol, dt) {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    margin: 0;
+    padding-inline-start: 2.5rem;
+  }
+
   main:not([slot]) {
     display: grid;
     gap: 3rem 0rem;
@@ -253,18 +277,6 @@
     display: inline-flex;
     width: 1.5em;
     height: 1.5em;
-  }
-
-  @media (prefers-color-scheme: dark) {
-    :root {
-      --theme-accent: 221 50% 80%;
-      --theme-dark: 221 19% 70%;
-      --theme-light: 240 23% 32%;
-      --theme-neutral: 214 4% 88%;
-
-      --bg-color: hsl(var(--theme-black));
-      --fg-color: hsl(var(--theme-white));
-    }
   }
 
   @media screen and (min-width: 48rem) {

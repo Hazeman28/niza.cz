@@ -1,8 +1,16 @@
 <template>
   <style>
     a {
+      --size: 2rem;
+
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
       color: var(--fg-color);
       line-height: 0;
+      width: var(--size);
+      height: var(--size);
+      aspect-ratio: 1 / 1;
 
       &:hover {
         filter: brightness(0.8);

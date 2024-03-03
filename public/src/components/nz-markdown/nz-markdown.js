@@ -13,8 +13,6 @@ export const definition = {
       .filter(Boolean)
       .join("\n");
 
-    console.log(string);
-
     const parsedMarkdown = marked.parse(string);
 
     article.innerHTML = parsedMarkdown;

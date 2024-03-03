@@ -18,6 +18,22 @@
           }
         }
       }
+
+      &:not([open]) {
+        & > summary[data-line]::after {
+          content: "";
+          grid-area: indicator;
+          width: 2px;
+          height: calc(100% + 3rem);
+          justify-self: center;
+          background-image: linear-gradient(
+            to bottom,
+            currentColor,
+            transparent
+          );
+          translate: 0 calc(var(--padding) + var(--indicator-size));
+        }
+      }
     }
 
     summary {
@@ -28,7 +44,6 @@
         "indicator title  title" / var(--indicator-size) 1fr 1fr;
       align-items: flex-start;
       list-style: none;
-      position: relative;
       padding: var(--padding);
       border-radius: var(--br-lg);
       transition: background-color var(--td-fast) ease-in-out;
@@ -57,6 +72,8 @@
         grid-area: period;
         font-size: var(--fs-caption);
         font-family: var(--ff-mono);
+        display: inline-flex;
+        flex-direction: column;
       }
 
       & > ::slotted(*) {
