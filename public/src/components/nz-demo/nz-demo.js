@@ -2,7 +2,7 @@ import hljs from "https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.9.0/bui
 import xml from "https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.9.0/build/es/languages/xml.min.js";
 import css from "https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.9.0/build/es/languages/css.min.js";
 import js from "https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.9.0/build/es/languages/javascript.min.js";
-import { stripIndent } from "/src/shared/utils.js";
+import { stripIndent } from "../../shared/utils.js";
 
 const HIGHLIGHT_LANGUAGES = {
   xml,

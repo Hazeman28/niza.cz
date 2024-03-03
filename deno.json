@@ -4,7 +4,6 @@
     "deploy": "deployctl deploy --project=niza --prod --exclude=node_modules main.ts"
   },
   "imports": {
-    "/src/": "./public/src/",
     "assert": "https://deno.land/std@0.207.0/assert/mod.ts",
     "dotenv": "https://deno.land/std@0.208.0/dotenv/mod.ts",
     "oak": "https://deno.land/x/oak@v12.6.1/mod.ts",

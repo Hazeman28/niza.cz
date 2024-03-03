@@ -1,5 +1,5 @@
 import { marked } from "https://cdn.jsdelivr.net/npm/marked@11.2.0/lib/marked.esm.js";
-import { stripIndent } from "/src/shared/utils.js";
+import { stripIndent } from "../../shared/utils.js";
 
 /** @type {CustomElementDefinition<"nz-markdown">} */
 export const definition = {
